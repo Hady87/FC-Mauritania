@@ -3,9 +3,9 @@ import React from 'react'
 function Objective() {
   return (
     <>
-    <div className='container'>
-     <div className="row  p-3">
-            <div className="col">
+    <div classNameName='container'>
+     <div classNameName="row  p-3">
+            <div classNameName="col">
                 <ul> 
                     <h3>Objectives</h3>
                     <li>Enhancement of civic education in the field of Liberal democracy, Citizenship rights (duties and responsibilities)

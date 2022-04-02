@@ -1,39 +1,56 @@
 import React from "react";
 import { FaEnvelope, FaFax, FaPhone } from "react-icons/fa";
-//import MapAddress from "./MapAddress";
+import DonationForm from "./DonationForm";
+import FormContact from "./FormContact";
+import MapAddress from "./MapAddress";
+import GoogleApiWrapper from "./MapAddress";
+
 function Contact() {
   return (
     <>
       <div className="container">
         <div className="row row-content">
-          <div className="col-sm-8 mx-auto my-4">
-            <h3>Location Information</h3>
-          </div>
-          <div className="col-12 col-sm-4 offset-sm-1">
-            <h5>Our Address</h5>
-            <address>
-              216 E-nour
+          
+          <div className="col-10 col-sm-6 mx-auto my-2">
+            <h3>Our Address</h3>
+            <address >
+             <p className="my-1">216 E-nour</p> 
+             
+                <p className="my-1"> Tevragh-Zeina,Nouakchott</p>
+             <p className="my-1">  
+              Mauritania</p>
+              
+              <FaPhone className="my-2" />: +22223138386
               <br />
-              Tevragh-Zeina,Nouakchott
+              <FaFax className="my-2" />: +222 36184074
               <br />
-              Mauritania
-              <br />
-              <FaPhone />: +22223138386
-              <br />
-              <FaFax />: +222 36184073
-              <br />
-              <FaEnvelope />:
+              <FaEnvelope className="my-2"/>:
               <a href="mailto:freedomandcitizenshipngo@gmail.com">
                 email@FC_mauritania
               </a>
             </address>
           </div>
-          <div class="col-12 col-sm-6 offset-sm-1">
-                 <h5>Map of our Location</h5>
+          <div className="col-10 col-sm-6 mx-auto my-2 ">
+                 <h3 className=" text-nowrap">Map Location</h3>
+          <MapAddress/>
+        </div>
+        </div>
         
+        
+        <div className="row row-content">
+          
+          <div className="col-10 offset-2 ">
+        <FormContact/>
         </div>
         </div>
-      </div>
+        <div className="row row-content">
+          
+          <div className="col-10 offset-2 ">
+        <DonationForm/>
+        </div>
+        </div>
+        </div>
+      
     </>
   );
 }

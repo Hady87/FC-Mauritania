@@ -20,7 +20,11 @@ function About() {
                 />
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
-                  <Card.Text><p>{item.text}</p></Card.Text>
+                  <Card.Text>{item.text}
+                  
+                  
+                  
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </div>

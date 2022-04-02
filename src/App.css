@@ -19,7 +19,7 @@ h2 {
 .row-content {
   padding: 50px 0;
   border-bottom: 1px ridge;
-  min-height: 200px;
+  min-height: 300px;
 }
 
 .site-footer {
@@ -60,4 +60,21 @@ h2 {
 .page-exit-active {
   opacity: 0;
   transition: 300ms ease-in;
+}
+.errorsMsg {
+  font-weight: 600;
+  color: red;
+}
+.alertMsg {
+  font-weight: 600;
+  color: green;
+}
+.styleRadio {
+  background-color: gray;
+  padding: 5px;
+  border-radius: 5px;
+}
+.otherAmount {
+  border: 1px solid black;
+  height: 30px;
 }
