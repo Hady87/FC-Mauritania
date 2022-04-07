@@ -1,20 +1,38 @@
 
-import React, { Component } from "react";
+import React from "react";
+import { useNavigate } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { FaHome,FaInfo ,FaAddressCard} from 'react-icons/fa';
 
 import { Container, Navbar, Nav } from "react-bootstrap";
 
-export default class Header extends Component {
-  render() {
+ function Header(){
+   
+  
+ 
     return (
       <>
         <div className="jumbotron">
           <div className="container">
             <div className="row">
-              <div className="col">
+              <div className="col- col-sm-10 mb-4">
                 <h1>FREEDOM & CITIZENSHIP</h1>
                 <h2>F.C MAURITANIA</h2>
               </div>
+              <div className=" col-12 col-sm-2 my-auto">
+                  <HashLink to="/contact/#goDonate">
+                <button
+                  type="button"
+                  className=" col btn btn-success mb-2"
+                  id="creditCard"
+                
+                >
+                  Donate
+                </button>
+                </HashLink>
+              </div>
+            
+
             </div>
           </div>
         </div>
@@ -41,4 +59,4 @@ export default class Header extends Component {
       </>
     );
   }
-}
+export default Header

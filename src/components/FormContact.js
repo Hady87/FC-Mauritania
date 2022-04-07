@@ -1,11 +1,14 @@
-import React, {useState}from "react";
+import React, {useState,useContext}from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import FcMauritaniaContext from "../context/FcMauritaniaContext";
   import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
 function FormContact() {
-   const [otherOption, setOtherOption]=useState(false)
-   const [optionSelcted, setOptionSelcted]=useState(true)
-   const [message, setMessage] = useState('');
+  const {  
+        
+        otherOption,
+        
+        SelectOption } = useContext(FcMauritaniaContext);  
    const { register, handleSubmit,reset, formState: { errors } } = useForm();
 const onSubmit = (data) => {
   //console.log(data);
@@ -14,21 +17,7 @@ const onSubmit = (data) => {
    toast(`thank you ${data.firstName} ${data.lastName} for contacting us`);
    //setTimeout(() => setMessage(''), 10000);
 }
-const SelectOption=(e)=>{
- const value=e.target.value
- 
- if(value==!""){
-  setOptionSelcted(false)
-  setOtherOption(false)
- }
- else if(value==='other'){
-   setOtherOption(true)
- }
- else{
-   setOtherOption(false)
- }
-  console.log(value);
-}
+
   return (
     <>
       <div className="container">

@@ -1,48 +1,24 @@
-import React,{useState} from "react";
+import React,{useContext} from "react";
 import { useForm } from "react-hook-form";
-import CreditCardInput from 'react-credit-card-input';
- import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+//import CreditCardInput from 'react-credit-card-input';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import PaymentCard from "./PaymentCard";
+import PayPalButton from "./PayPalButton"
+import FcMauritaniaContext from "../context/FcMauritaniaContext";
 function DonationForm() {
+   const {  oneTime,
+        recurring,
+        amount,
+        howOften,
+        startPay,
+        onValueChange,
+        selectAmount,
+        donationType,
+        payementInfo,
+        SelectOption } = useContext(FcMauritaniaContext);
    const { register, handleSubmit,reset, formState: { errors } } = useForm();
-  const [oneTime,setOneTime]=useState(true)
-  const [recurring,setRecurring]=useState(false)
-  const [amount,setAmount]=useState('')
-  const [howOften,setHowOften]=useState('monthly')
-   const [startPay,setStartPay]=useState(false)
-
   
-
-
-
-
-  const onValueChange=(e)=>{
-    const value=e.target.value
-    if(value==='recurringValue'){
-      setRecurring(true)
-      setOneTime(false)
-      
-    }
-    else if(value==='oneTimeValue'){
-      setOneTime(true)
-      setRecurring(false)
-       
-    }
-  }
-  const selectAmount=(e)=>{
-    const option=e.target.value
-    setAmount(option)
-     //console.log('Hello')
-  }
-  const donationType=(e)=>{
-    const recur=e.target.value
-    setHowOften(recur)
-    console.log('Hello my donation')
-  }
-  const payementInfo=()=>{
-setStartPay(true)
-  }
 const onSubmitDonation = (data) => {
   console.log(data);
   //setMessage(`thank you ${data.firstName} ${data.lastName} for contacting us`);
@@ -294,17 +270,17 @@ const onSubmitDonation = (data) => {
               
             </div>
             <div className="row my-5  mx-auto">
-              <div className="col-10 col-lg-4 offset-md-2 text-center">
-           { oneTime &&      <p id="oneDonation1"> Your <i>one time</i> donation :<strong>{amount}</strong></p> }
-             { recurring &&    <p id="recurringDonation1"> Your <i>{howOften}</i>  donation <strong>{amount}</strong></p>}
-                <br />
+              <div className="col-10 col-lg-6 text-center">
+           { oneTime &&  amount &&    <p id="oneDonation1"> Your <i>one time</i> donation: <strong>{amount}</strong></p> }
+             { recurring && amount &&     <p id="recurringDonation1"> Your <i>{howOften}</i>  donation: <strong>{amount}</strong></p>}
+                
                 <span id="amout1"></span>
               </div>
-              <div className="col-10 col-lg-4 text-center align-item-center">
+              <div className="col-10 col-lg-6 text-center align-item-center">
              
-                <p>Donate with your preferred payment method:</p>  
+                
                
-                <button
+                 <button
                   type="button"
                   className=" col btn btn-success mb-2"
                   id="creditCard"
@@ -447,25 +423,25 @@ const onSubmitDonation = (data) => {
                     Giv now
                   </button>
                 </div>
-                   { oneTime && 
+                   { oneTime && amount && 
                 <div className="col-sm-8 text-nowrap mx-auto my-3 text-center">
                 
                    
                     <p className=" text-center" id="oneDonation2">
                       
-                      Your  <u><i>one time</i></u>  donation:<strong>{amount}</strong>
+                      Your  <u><i>one time</i></u>  donation: <strong>{amount}</strong>
                     </p>
                     
                   
                   </div>
                    }
-                   {recurring && 
+                   {recurring && amount && 
                   
                   <div className="col-sm-8 text-nowrap mx-auto my-3 text-center">
                   
                     <p className="text-center" id="recurringDonation2">
                       
-                      Your <i>{howOften}</i> donation:<strong>{amount}</strong>
+                      Your <i>{howOften}</i> donation: <strong>{amount}</strong>
                     </p>
                   
                   

@@ -1,4 +1,5 @@
 import React from "react";
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import Card from "react-bootstrap/Card";
 import aboutAC from "../shared/aboutAC";
 
@@ -8,7 +9,13 @@ function About() {
     <>
       {" "}
       <div className="container">
+         <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
         <div className="row">
+          
           {aboutAC.map((item, k) => (
             <div className=" col-10 col-md-4 mx-auto my-5" key={item.id}>
               <Card >
@@ -27,9 +34,13 @@ function About() {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              
             </div>
+           
           ))}
+          
         </div>
+         </FadeTransform>
         <div className="row  p-3">
           <div className="col">
             <ul className="">
