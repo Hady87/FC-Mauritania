@@ -49,7 +49,7 @@ import { Container, Navbar, Nav } from "react-bootstrap";
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link className="d-flex align-items-center " active href="/home"> <FaHome  /> Home</Nav.Link>
+              <Nav.Link className="d-flex align-items-center "  href="/home"> <FaHome  /> Home</Nav.Link>
               <Nav.Link className="d-flex align-items-center" href="/about"><FaInfo />About</Nav.Link>
               <Nav.Link className="d-flex align-items-center" href="/contact"><FaAddressCard className="mx-1" /> Contact Us</Nav.Link>
             </Nav>
