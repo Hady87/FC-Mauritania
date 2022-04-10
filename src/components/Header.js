@@ -1,14 +1,21 @@
 
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, {useState}from "react";
+import { NavLink } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import { FaHome,FaInfo ,FaAddressCard} from 'react-icons/fa';
 
 import { Container, Navbar, Nav } from "react-bootstrap";
 
  function Header(){
-   
-  
+   const [selected,setSelected]=useState(1)
+function handleSelect(e) {
+  //alert(`selected ${selectedKey}`);
+ const selectedKey=e.target.eventKey
+ setSelected(selectedKey)
+  console.log(selectedKey)
+
+
+}
  
     return (
       <>
@@ -48,10 +55,10 @@ import { Container, Navbar, Nav } from "react-bootstrap";
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link className="d-flex align-items-center "  href="/home"> <FaHome  /> Home</Nav.Link>
-              <Nav.Link className="d-flex align-items-center" href="/about"><FaInfo />About</Nav.Link>
-              <Nav.Link className="d-flex align-items-center" href="/contact"><FaAddressCard className="mx-1" /> Contact Us</Nav.Link>
+            <Nav className="me-auto"  >
+              <NavLink className=""    to="home"> <FaHome  /> Home</NavLink>
+              <NavLink className=""    to="about"><FaInfo />About</NavLink>
+              <NavLink className=""   to="contact"><FaAddressCard className="mx-1" /> Contact Us</NavLink>
             </Nav>
             </Navbar.Collapse>
           </Container>

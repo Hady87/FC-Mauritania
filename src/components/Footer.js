@@ -5,7 +5,7 @@ function Footer(props) {
         <footer className="site-footer">
         <div className="container">
            <div className="row">
-              <div className="col-8 col-sm-3 text-center mx-auto my-2">
+              <div className="col-4 col-sm-3 text-center mx-auto my-2">
                  <h5>Links</h5>
                  <ul className="list-unstyled">
                       <li><Link to='/home'>Home</Link></li>

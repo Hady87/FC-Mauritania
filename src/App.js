@@ -45,10 +45,12 @@ function App() {
 
                 <Route
                   path="/about"
+                  
                   element={isLoading ? <Spinner /> : <About />}
                 />
                 <Route
                   path="/contact"
+                  
                   element={isLoading ? <Spinner /> : <Contact />}
                 />
                 <Route
