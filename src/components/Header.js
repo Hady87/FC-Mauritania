@@ -56,9 +56,9 @@ function handleSelect(e) {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"  >
-              <NavLink className=""    to="home"> <FaHome  /> Home</NavLink>
-              <NavLink className=""    to="about"><FaInfo />About</NavLink>
-              <NavLink className=""   to="contact"><FaAddressCard className="mx-1" /> Contact Us</NavLink>
+              <NavLink className="mx-2 my-1"    to="home"> <FaHome  /> Home</NavLink>
+              <NavLink className="mx-2 my-1"    to="about"><FaInfo />About</NavLink>
+              <NavLink className="mx-2 my-1"   to="contact"><FaAddressCard  /> Contact Us</NavLink>
             </Nav>
             </Navbar.Collapse>
           </Container>
