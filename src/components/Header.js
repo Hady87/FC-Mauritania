@@ -43,7 +43,7 @@ function handleSelect(e) {
             </div>
           </div>
         </div>
-        <Navbar  collapseOnSelect className="navbar" variant="dark" expand="lg" >
+        <Navbar  collapseOnSelect className="navbar sticky-top" variant="dark" expand="lg" >
           <Container >
             <Navbar.Brand href="/">
               <img
